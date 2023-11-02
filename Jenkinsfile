@@ -36,6 +36,14 @@ pipeline {
                 // Add deployment steps for dev here
             }
         }
+	    stage{
+		    when {
+			    branch "production" 
+		    }
+		    steps{
+			    echo 'Restart Service'
+		    }
+	    }
     }
 
     post {
