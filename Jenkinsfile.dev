@@ -1,0 +1,27 @@
+pipeline{
+    agent any
+    stages{
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Stage1'){
+            steps{
+                echo "echo Stage1"
+            }
+        }
+		stage('Deploy') {
+            steps {
+                sh 'cp -r * /tmp'
+            }
+        }
+
+            stage('Stage2'){
+            steps{
+                echo "echo Stage2"
+            }
+        }
+
+    }
+}
