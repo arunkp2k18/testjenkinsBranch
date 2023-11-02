@@ -36,7 +36,7 @@ pipeline {
                 // Add deployment steps for dev here
             }
         }
-	    stage{
+	    stage('Restart Service'){
 		    when {
 			    branch "production" 
 		    }
